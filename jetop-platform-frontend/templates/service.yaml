@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "jetop-platform-frrontend.fullname" . }}
+  labels:
+    {{- include "jetop-platform-frrontend.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "jetop-platform-frrontend.selectorLabels" . | nindent 4 }}

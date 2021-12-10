@@ -1,0 +1,9 @@
+dependencies:
+- name: jetop-platform-frontend
+  repository: file://../jetop-platform-frontend/
+  version: 0.1.0
+- name: jetop-platform-backend
+  repository: file://../jetop-platform-backend/
+  version: 0.1.0
+digest: sha256:a36d130ea11d204a1549ef32c00a547587b563a31f46674338c3f9cb62356435
+generated: "2021-12-10T19:56:25.6037608+01:00"
