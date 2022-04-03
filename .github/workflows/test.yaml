@@ -8,5 +8,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          echo "MESSAGE=$(git log -1 --pretty=%B)" >> $GITHUB_ENV
+          echo "MESSAGE=$(git log -1 --pretty=%s)" >> $GITHUB_ENV
       - uses: hmarr/debug-action@v2
