@@ -8,5 +8,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          echo "MESSAGE=$(git log --oneline --format=%B -n 1 ${{ github.sha }} | head -n 1)" >> $GITHUB_ENV
+          echo "MESSAGE_PREFIX="[Platform][Backend] " >> $GITHUB_ENV
+          echo "MESSAGE_BODY=$(git log --oneline --format=%B -n 1 ${{ github.sha }} | head -n 1)" >> $GITHUB_ENV
+          echo "MESSAGE=${MESSAGE_PREFIX}${MESSAGE_BODY}" >> $GITHUB_ENV
+          echo "MESSAGE=${MESSAGE//[/\\[}" >> $GITHUB_ENV
       - uses: hmarr/debug-action@v2
