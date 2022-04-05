@@ -8,5 +8,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          echo "MESSAGE=$(git log --oneline --format=%B -n 1 HEAD | head -n 1)" >> $GITHUB_ENV
+          echo "MESSAGE=$(git log --oneline --format=%B -n 1 ${{ github.sha }} | head -n 1)" >> $GITHUB_ENV
       - uses: hmarr/debug-action@v2
